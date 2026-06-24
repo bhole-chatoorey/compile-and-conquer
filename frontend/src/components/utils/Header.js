@@ -18,7 +18,7 @@ const Header = ({socket}) => {
       console.log(process.env.BACKEND_URI)
       async function fetchData(){
         try {
-      const notifications= await axios.get(`http://localhost:5000/api/notifications/notification`,{
+      const notifications= await axios.get(`${process.env.REACT_APP_API_URL}/api/notifications/notification`,{
         withCredentials: true,
       })
       if(isMounted){
@@ -53,7 +53,7 @@ const Header = ({socket}) => {
       setNotifications([])
       setRealTimeNotifications([])
       setOpen(false)
-      await axios.put('http://localhost:5000/api/notifications/updateNotification',{
+      await axios.put('${process.env.REACT_APP_API_URL}/api/notifications/updateNotification',{
         withCredentials: true,
       })
     } catch (error) {
@@ -63,7 +63,7 @@ const Header = ({socket}) => {
 
   const addFriendHandler = async() => {
     try {
-      await axios.put('http://localhost:5000/api/friends/addFriend',{friendUsername: user},{
+      await axios.put('${process.env.REACT_APP_API_URL}/api/friends/addFriend',{friendUsername: user},{
         withCredentials: true,
       })
     } catch (error) {
@@ -74,7 +74,7 @@ const Header = ({socket}) => {
   const handleLogout = async() => {
     localStorage.removeItem("user")
     try {
-      await axios.get('http://localhost:5000/api/user/logout').then(()=>{
+      await axios.get('${process.env.REACT_APP_API_URL}/api/user/logout').then(()=>{
       redirect('/login'); 
     })
     } catch (error) {

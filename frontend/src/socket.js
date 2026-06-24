@@ -7,7 +7,7 @@ const GetSocket= ()=> useContext(SocketContent)
 
 const SocketProvider= ({children})=>{
   const socket=  useMemo(()=> 
-    io('http://localhost:5000', {withCredentials: true}) 
+    io(${process.env.REACT_APP_API_URL}, {withCredentials: true}) 
   ,[])
   return(
     <SocketContent.Provider value={socket}>

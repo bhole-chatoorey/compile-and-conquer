@@ -13,7 +13,7 @@ const Register = () => {
     setIsLoading(true);
     e.preventDefault();
     try {
-      const {data} = await axios.post('http://localhost:5000/api/user/register', formData, {
+      const {data} = await axios.post('${process.env.REACT_APP_API_URL}/api/user/register', formData, {
         withCredentials: true,
       });
       localStorage.setItem('user', data.user.username);
