@@ -12,7 +12,7 @@ Compile and Conquer is a competitive programming arena where users can engage an
 - **Smart problem recommendations**: Suggestions based on weak topics.
 
 ## Hosted Links:
-[Frontend](https://compile-and-conquer-ll9wa0b5a-compile-and-conquer.vercel.app/) (hosted on Vercel)
+[Frontend](https://compile-and-conquer.vercel.app) (hosted on Vercel)
 
 [Backend](https://compile-and-conquer.onrender.com) (hosted on Render)
 
